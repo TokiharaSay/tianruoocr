@@ -1112,7 +1112,7 @@ namespace TrOCR
 				}
                 var data = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=",
                     HttpUtility.UrlEncode(text)?.Replace("+", "%20"));
-                var html = CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", data);
+                var html = CommonHelper.PostStrData("https://translate.google.com/translate_a/single", data);
 
 				var jArray = (JArray)JsonConvert.DeserializeObject(html);
 				var count = ((JArray)jArray[0]).Count;
@@ -1937,7 +1937,7 @@ namespace TrOCR
 			httpWebRequest.Headers.Add("Accept-Encoding: gzip,deflate");
 			httpWebRequest.Headers.Add("Accept-Charset: utf-8");
 			httpWebRequest.ContentType = "application/x-www-form-urlencoded; charset=utf-8";
-			httpWebRequest.Host = "translate.google.cn";
+			httpWebRequest.Host = "translate.google.com";
 			httpWebRequest.Accept = "*/*";
 			httpWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)";
 			string result;
@@ -3977,7 +3977,7 @@ namespace TrOCR
 					}
 				}
 				var postData = string.Concat("client=gtx&sl=", text3, "&tl=", text4, "&dt=t&q=", HttpUtility.UrlEncode(text).Replace("+", "%20"));
-				var jArray = (JArray)JsonConvert.DeserializeObject(CommonHelper.PostStrData("https://translate.google.cn/translate_a/single", postData));
+				var jArray = (JArray)JsonConvert.DeserializeObject(CommonHelper.PostStrData("https://translate.google.com/translate_a/single", postData));
 				var count = ((JArray)jArray[0]).Count;
 				for (var i = 0; i < count; i++)
 				{
